@@ -1,0 +1,11 @@
+﻿@using DarthTV.DB.Entities.Tv
+@model TvItemModel
+
+<div class="col">
+    <img src='@Model.Entity.PosterUrl ?? "foo"' class="card-img-top" alt="..." />
+    <div class="card-body">
+        <h5 class="card-title">@Model.Entity.Title</h5>
+        <p class="card-text">@Model.Entity.Plot</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>

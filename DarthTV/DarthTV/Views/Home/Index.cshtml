@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <input id="inputSearch" class="form-control">
+    <a asp-area="" asp-controller="Home" asp-action="Search">Search</a>
+
+    <form asp-area="" asp-controller="Search" asp-action="Index" method="get">
+        <div class="form-group">
+            <input id="inputSearch" name="query" class="form-control" placeholder="Enter your search query">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+</div>

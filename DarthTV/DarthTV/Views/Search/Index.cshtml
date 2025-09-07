@@ -1,0 +1,23 @@
+﻿@using DarthTV.DB.Entities.Tv
+@model IEnumerable<TvItemModel>
+
+<div class="container">
+    <div class="row">
+        @foreach (var tvItem in Model)
+        {
+            <div class="col">
+                <div class="card @tvItem.CardClasses" style="width: 18rem;">
+                    <img src='@tvItem.Entity.PosterUrl ?? "foo"' class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">@tvItem.Entity.Title</h5>
+                        <p class="card-text">@tvItem.Entity.Plot</p>
+                        <form asp-area="" asp-action="Index" asp-controller="TvItem" method="get">
+                            <input type="hidden" name="id" value="@tvItem.Entity.Id " />
+                            <button type="submit" class="btn btn-primary">Go</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
